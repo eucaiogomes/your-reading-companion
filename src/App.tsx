@@ -53,6 +53,17 @@ import {
   ChevronDown
 } from 'lucide-react';
 import heroYoungProfessional from './assets/hero-young-professional.jpg';
+import course01 from './assets/lector/courses/c01-ai-business.jpg';
+import course02 from './assets/lector/courses/c02-chatgpt-productivity.jpg';
+import course03 from './assets/lector/courses/c03-automation-ai.jpg';
+import course04 from './assets/lector/courses/c04-time-management.jpg';
+import course05 from './assets/lector/courses/c05-content-creation.jpg';
+import course06 from './assets/lector/courses/c06-excel-ai.jpg';
+import course07 from './assets/lector/courses/c07-notion.jpg';
+import course08 from './assets/lector/courses/c08-prompt-engineering.jpg';
+import course09 from './assets/lector/courses/c09-virtual-assistants.jpg';
+import course10 from './assets/lector/courses/c10-dashboards.jpg';
+import course11 from './assets/lector/courses/c11-personal-productivity.jpg';
 
 // --- Types ---
 interface ContentItem {

@@ -479,7 +479,9 @@ function Footer() {
 // ---------- PAGE ----------
 export default function LectorVitrine() {
   return (
-    <div className="min-h-screen bg-[#F7F9FC]">
+    <div className="min-h-screen relative" style={{ background: 'var(--gradient-hero)' }}>
+      <div className="absolute inset-0 orbit-pattern opacity-40 pointer-events-none" />
+      <div className="relative">
       <Header />
       <main className="max-w-[1400px] mx-auto px-6 lg:px-10 pt-8 pb-12">
         {/* HERO + SIDEBAR ROW */}
@@ -548,6 +550,7 @@ export default function LectorVitrine() {
         </section>
       </main>
       <Footer />
+      </div>
     </div>
   );
 }

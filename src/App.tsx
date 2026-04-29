@@ -2725,7 +2725,7 @@ export default function App() {
                   <div className="flex flex-col lg:flex-row gap-8">
                     {/* Left Column: Content Sections */}
                     <div className="flex-1 overflow-hidden">
-                      {SECTIONS.map((section) => (
+                      {SECTIONS.filter((section) => section.variant === 'avancado-1').map((section) => (
                         <ContentSection key={section.id} section={section} />
                       ))}
                     </div>

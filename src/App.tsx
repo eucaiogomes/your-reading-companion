@@ -2098,6 +2098,8 @@ const SocialSidebar = ({ onSeeAll }: { onSeeAll: () => void }) => {
 };
 
 const ContentSection: React.FC<{ section: Section }> = ({ section }) => {
+  const [expanded, setExpanded] = useState(false);
+
   const scroll = (direction: 'left' | 'right') => {
     const container = document.getElementById(`scroll-${section.id}`);
     if (container) {
@@ -2118,39 +2120,58 @@ const ContentSection: React.FC<{ section: Section }> = ({ section }) => {
           </h2>
           <div className="mt-3 h-[3px] w-14 rounded-full" style={{ background: 'var(--gradient-orange)' }} />
         </div>
-        <button className="text-sm font-semibold text-[#08204D] hover:text-orange-600 transition-colors flex items-center gap-1 group">
-          Ver tudo
-          <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+        <button
+          onClick={() => setExpanded((v) => !v)}
+          className="text-sm font-semibold text-[#08204D] hover:text-orange-600 transition-colors flex items-center gap-1 group"
+        >
+          {expanded ? 'Recolher' : 'Ver tudo'}
+          <ChevronRight
+            className={`h-4 w-4 transition-transform ${expanded ? 'rotate-90' : 'group-hover:translate-x-1'}`}
+          />
         </button>
       </div>
 
-      <div className="relative group">
-        <div
-          onClick={() => scroll('left')}
-          className="absolute left-0 top-0 bottom-6 w-16 bg-gradient-to-r from-[#041433]/40 to-transparent z-10 flex items-center justify-start opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer rounded-l-2xl"
-        >
-          <ChevronLeft className="text-white ml-2" strokeWidth={3} size={28} />
-        </div>
-
-        <div
-          id={`scroll-${section.id}`}
-          className="flex gap-5 overflow-x-auto pb-6 scrollbar-hide snap-x snap-mandatory pr-[20vw] sm:pr-[10vw] items-stretch"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      {expanded ? (
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 items-stretch"
         >
           {section.items.map((item) => (
-            <div key={item.id} className="snap-start shrink-0 flex items-stretch">
+            <div key={item.id} className="flex items-stretch">
               <ContentCard item={item} variant={section.variant} />
             </div>
           ))}
-        </div>
+        </motion.div>
+      ) : (
+        <div className="relative group">
+          <div
+            onClick={() => scroll('left')}
+            className="absolute left-0 top-0 bottom-6 w-16 bg-gradient-to-r from-[#041433]/40 to-transparent z-10 flex items-center justify-start opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer rounded-l-2xl"
+          >
+            <ChevronLeft className="text-white ml-2" strokeWidth={3} size={28} />
+          </div>
 
-        <div
-          onClick={() => scroll('right')}
-          className="absolute right-0 top-0 bottom-6 w-16 bg-gradient-to-l from-[#041433]/40 to-transparent z-10 flex items-center justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer rounded-r-2xl"
-        >
-          <ChevronRight className="text-white mr-2" strokeWidth={3} size={28} />
+          <div
+            id={`scroll-${section.id}`}
+            className="flex gap-5 overflow-x-auto pb-6 scrollbar-hide snap-x snap-mandatory pr-[20vw] sm:pr-[10vw] items-stretch"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {section.items.map((item) => (
+              <div key={item.id} className="snap-start shrink-0 flex items-stretch">
+                <ContentCard item={item} variant={section.variant} />
+              </div>
+            ))}
+          </div>
+
+          <div
+            onClick={() => scroll('right')}
+            className="absolute right-0 top-0 bottom-6 w-16 bg-gradient-to-l from-[#041433]/40 to-transparent z-10 flex items-center justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer rounded-r-2xl"
+          >
+            <ChevronRight className="text-white mr-2" strokeWidth={3} size={28} />
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };

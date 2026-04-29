@@ -64,6 +64,17 @@ import course08 from './assets/lector/courses/c08-prompt-engineering.jpg';
 import course09 from './assets/lector/courses/c09-virtual-assistants.jpg';
 import course10 from './assets/lector/courses/c10-dashboards.jpg';
 import course11 from './assets/lector/courses/c11-personal-productivity.jpg';
+import trail01 from './assets/lector/trails/t01-time.jpg';
+import trail02 from './assets/lector/trails/t02-communication.jpg';
+import trail03 from './assets/lector/trails/t03-digital-org.jpg';
+import trail04 from './assets/lector/trails/t04-processes.jpg';
+import trail05 from './assets/lector/trails/t05-meetings.jpg';
+import trail06 from './assets/lector/trails/t06-collaboration.jpg';
+import trail07 from './assets/lector/trails/t07-projects.jpg';
+import trail08 from './assets/lector/trails/t08-workflows.jpg';
+import trail09 from './assets/lector/trails/t09-leadership.jpg';
+import trail10 from './assets/lector/trails/t10-service.jpg';
+import trail11 from './assets/lector/trails/t11-accountability.jpg';
 
 // --- Types ---
 interface ContentItem {
@@ -177,6 +188,53 @@ const SECTIONS: Section[] = [
       title: 'Produtividade Pessoal com Sistemas Inteligentes',
       description: 'Metodologias e ferramentas para foco, execução e alta performance no trabalho.',
       duration: '2h 20min', price: 'R$ 64,90' },
+  ] },
+
+  { id: 't1', title: 'Trilhas em Destaque', variant: 'avancado-1', items: [
+    { id: 't1-0', type: 'TRAIL', thumb: trail01, authors: 'Equipe Lector', progress: 70, grade: 50,
+      title: 'Trilha Gestão do Tempo e Prioridades',
+      description: 'Estruture sua rotina, organize demandas e aumente eficiência na execução diária.',
+      duration: '8h 20min', price: 'R$ 169,90' },
+    { id: 't1-1', type: 'TRAIL', thumb: trail02, authors: 'Equipe Lector', progress: 70, grade: 50,
+      title: 'Trilha Comunicação Corporativa de Alta Performance',
+      description: 'Desenvolva comunicação clara, objetiva e estratégica para ambientes corporativos.',
+      duration: '7h 45min', price: 'R$ 159,90' },
+    { id: 't1-2', type: 'TRAIL', thumb: trail03, authors: 'Equipe Lector', progress: 70, grade: 50,
+      title: 'Trilha Produtividade e Organização Digital',
+      description: 'Implemente sistemas, ferramentas e métodos para organizar tarefas, arquivos e projetos.',
+      duration: '9h 10min', price: 'R$ 179,90' },
+    { id: 't1-3', type: 'TRAIL', thumb: trail04, authors: 'Equipe Lector', progress: 70, grade: 50,
+      title: 'Trilha Eficiência Operacional e Processos',
+      description: 'Aprenda boas práticas para padronização, melhoria contínua e otimização de rotinas.',
+      duration: '10h 30min', price: 'R$ 199,90' },
+    { id: 't1-4', type: 'TRAIL', thumb: trail05, authors: 'Equipe Lector', progress: 70, grade: 50,
+      title: 'Trilha Reuniões Produtivas e Gestão de Follow-up',
+      description: 'Conduza reuniões mais objetivas e mantenha alinhamento entre times e projetos.',
+      duration: '5h 50min', price: 'R$ 129,90' },
+    { id: 't1-5', type: 'TRAIL', thumb: trail06, authors: 'Equipe Lector', progress: 70, grade: 50,
+      title: 'Trilha Colaboração e Trabalho em Equipe',
+      description: 'Fortaleça alinhamento, colaboração entre áreas e execução conjunta de metas.',
+      duration: '8h 00min', price: 'R$ 164,90' },
+    { id: 't1-6', type: 'TRAIL', thumb: trail07, authors: 'Equipe Lector', progress: 70, grade: 50,
+      title: 'Trilha Gestão de Projetos para Times Corporativos',
+      description: 'Planejamento, acompanhamento e entrega de projetos com maior previsibilidade.',
+      duration: '11h 15min', price: 'R$ 219,90' },
+    { id: 't1-7', type: 'TRAIL', thumb: trail08, authors: 'Equipe Lector', progress: 70, grade: 50,
+      title: 'Trilha Organização de Demandas e Fluxos de Trabalho',
+      description: 'Estruture processos internos, priorização e acompanhamento de atividades.',
+      duration: '7h 35min', price: 'R$ 149,90' },
+    { id: 't1-8', type: 'TRAIL', thumb: trail09, authors: 'Equipe Lector', progress: 70, grade: 50,
+      title: 'Trilha Liderança e Performance de Equipes',
+      description: 'Desenvolva habilidades para acompanhamento de resultados e gestão de pessoas.',
+      duration: '10h 40min', price: 'R$ 209,90' },
+    { id: 't1-9', type: 'TRAIL', thumb: trail10, authors: 'Equipe Lector', progress: 70, grade: 50,
+      title: 'Trilha Atendimento, Relacionamento e Excelência Operacional',
+      description: 'Melhore experiência interna e externa com processos e comunicação eficientes.',
+      duration: '8h 25min', price: 'R$ 169,90' },
+    { id: 't1-10', type: 'TRAIL', thumb: trail11, authors: 'Equipe Lector', progress: 70, grade: 50,
+      title: 'Trilha Cultura de Resultado e Accountability',
+      description: 'Desenvolva disciplina operacional, ownership e foco em metas organizacionais.',
+      duration: '6h 55min', price: 'R$ 139,90' },
   ] },
   { id: 'a2', title: 'Avançado 2', variant: 'avancado-2', items: generateItems(11, 'a2') },
   { id: 'a3', title: 'Avançado 3', variant: 'avancado-3', items: generateItems(11, 'a3') },

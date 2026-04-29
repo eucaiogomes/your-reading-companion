@@ -550,6 +550,7 @@ export default function LectorVitrine() {
         </section>
       </main>
       <Footer />
+      </div>
     </div>
   );
 }
